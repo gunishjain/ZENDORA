@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <!-- Style for "rectanglem" -->
+    <!-- Add this snippet to layer-list xml in drawable. -->
+
+            <corners android:radius="35dp" />
+            <solid android:color="#ffffffff" />
+
+
+
+
+
+</shape>
