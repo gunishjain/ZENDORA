@@ -44,7 +44,7 @@ public class secondActivity extends AppCompatActivity {
 
     private void launchActivity() {
 
-        Intent intent = new Intent(this, homeActivity.class);
+        Intent intent = new Intent(this, homev2.class);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }

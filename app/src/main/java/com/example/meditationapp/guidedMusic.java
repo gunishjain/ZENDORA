@@ -125,5 +125,17 @@ public class guidedMusic extends AppCompatActivity {
 
     }
 
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+
+        mp.stop();
+
     }
+
+
+
+}
 

@@ -1,10 +1,14 @@
 package com.example.meditationapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class musicLibrary extends AppCompatActivity {
 
@@ -31,23 +35,6 @@ public class musicLibrary extends AppCompatActivity {
 
     }
 
-    public void homebt(View view) {
-
-        launchActivity5();
-
-    }
-
-    public void meditatebt(View view) {
-
-        launchActivity6();
-
-    }
-
-    public void musicbt(View view) {
-
-        launchActivity7();
-
-    }
 
 
 
@@ -79,31 +66,6 @@ public class musicLibrary extends AppCompatActivity {
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
-    private void launchActivity5() {
-
-        Intent intent = new Intent(this, homeActivity.class);
-        startActivity(intent);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-    }
-
-    private void launchActivity6() {
-
-        Intent intent = new Intent(this, meditateActivity.class);
-        startActivity(intent);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-    }
-
-    private void launchActivity7() {
-
-        Intent intent = new Intent(this, musicLibrary.class);
-        startActivity(intent);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-    }
-
-
-
-
-
 
 
 
@@ -111,5 +73,48 @@ public class musicLibrary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_library);
+
+
+
+        BottomNavigationView bottomNav= findViewById(R.id.bottom_nav);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener= new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+
+            switch (menuItem.getItemId()) {
+                case R.id.nav_home:
+
+                    Intent intent1 = new Intent(musicLibrary.this, homev2.class);
+                    startActivity(intent1);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    break;
+
+
+                case R.id.nav_meditate:
+                    Intent intent2 = new Intent(musicLibrary.this, meditateActivity.class);
+                    startActivity(intent2);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    break;
+
+
+                case R.id.nav_music:
+
+
+
+                    break;
+
+
+            }
+
+            return  true;
+
+        }
+    };
+
+
 }
+

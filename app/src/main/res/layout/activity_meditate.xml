@@ -39,7 +39,7 @@
         app:texts="@array/example_one"
         app:timeout="1000" />
 
-    <Button
+    Button
         android:id="@+id/homebt"
         android:layout_width="123dp"
         android:layout_height="74dp"
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fading_text_view"
         app:layout_constraintVertical_bias="0.908" />
 
-    <Button
+    Button
         android:id="@+id/music"
         android:layout_width="123dp"
         android:layout_height="74dp"
@@ -75,7 +75,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fading_text_view"
         app:layout_constraintVertical_bias="0.908" />
 
-    <Button
+    Button
         android:id="@+id/meditatebt"
         android:layout_width="123dp"
         android:layout_height="74dp"
@@ -90,6 +90,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fading_text_view"
         app:layout_constraintVertical_bias="0.908" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

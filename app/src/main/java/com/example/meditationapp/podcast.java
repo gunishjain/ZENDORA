@@ -124,6 +124,17 @@ public class podcast extends AppCompatActivity {
 
     }
 
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+
+        mp.stop();
+
+    }
+
+
 }
 
 
