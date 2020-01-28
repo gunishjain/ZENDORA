@@ -5,38 +5,47 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
-
-
         android:label="ZENDORA"
-
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".homev2"
-            android:screenOrientation="portrait">
-
-        </activity>
-
-        <activity android:name=".meditateActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".podcast"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".binMusic"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".guidedMusic" android:screenOrientation="portrait"/>
-        <activity android:name=".generalMusic" android:screenOrientation="portrait"/>
-        <activity android:name=".musicLibrary" android:screenOrientation="portrait"/>
-        <activity android:name=".secondActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait">
-
+        <activity android:name=".seekbarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+
+
+        </activity>
+        <activity
+            android:name=".homev2"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".meditateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".podcast"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".binMusic"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".guidedMusic"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".generalMusic"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".musicLibrary"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".secondActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
 
         </activity>
 

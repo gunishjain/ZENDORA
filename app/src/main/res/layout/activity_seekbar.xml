@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgseek"
+    tools:context=".seekbarActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation" />
+
+    <SeekBar
+        android:id="@+id/happy"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="357dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="132dp"
+        android:max="9"
+        android:progress="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/energy"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="357dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="320dp"
+        android:max="9"
+        android:progress="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/happy" />
+
+    <Button
+        android:id="@+id/calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="decide"
+        android:text="calc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/energy"
+        app:layout_constraintVertical_bias="0.099" />
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="209dp"
+        android:layout_height="176dp"
+        android:background="@color/color4"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.599"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.846">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="179dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textColor="@color/color1" />
+
+        <Button
+            android:id="@+id/yes"
+            android:layout_width="158dp"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:onClick="redirect"
+            android:text="Fuck Yes!" />
+
+        <Button
+            android:id="@+id/no"
+            android:layout_width="162dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:onClick="reject"
+            android:text="Nikal " />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
