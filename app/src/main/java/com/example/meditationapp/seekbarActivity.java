@@ -1,8 +1,10 @@
 package com.example.meditationapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,140 +28,92 @@ public class seekbarActivity extends AppCompatActivity {
 
     TextView text;
 
+    Intent intent;
+
 
     public void decide ( View view){
 
         int p1,p2;
+        String music;
         p1=happy.getProgress();
         p2=energy.getProgress();
+
+
 
 
 
         Log.i ( "sum is ", Integer.toString(happy.getProgress()+energy.getProgress()));
 
 
-        if ( ( p1<=4)&&  (p2>4)){
+        if ( ( p1<=50)&&  (p2>50)){
 
+            music= " Guided medidation ";
 
-            text.setText("You should listen to guided medidation. Want to hear it ?  ");
+            intent = new Intent(seekbarActivity.this, guidedMusic.class);
 
-            layout.setVisibility(View.VISIBLE);
 
         }
-        else if ( ( p1<=4)&&  (p2<=4)){
+        else if ( ( p1<=50)&&  (p2<=50)){
+            music= "Podcast";
 
 
+            intent = new Intent(seekbarActivity.this, podcast.class);
 
 
-            text.setText("You should listen to a podcast.  Want to hear it ?  ");
-
-            layout.setVisibility(View.VISIBLE);
 
         }
 
-        else if ( ( p1>4)&&  (p2<=4)){
+        else if ( ( p1>50)&&  (p2<=50)){
 
+            music= "Beats";
 
+            intent = new Intent(seekbarActivity.this, binMusic.class);
 
-            text.setText("You should listen to binaural beats . Want to hear it ?  ");
-
-            layout.setVisibility(View.VISIBLE);
 
 
             // happy and low energy
         }
         else { //happy and high energy
 
+            music= "Happy song";
 
+            intent = new Intent(seekbarActivity.this, generalMusic.class);
 
-
-            text.setText("You should listen to a happy song . Want to hear it ?  ");
-
-            layout.setVisibility(View.VISIBLE);
 
 
         }
+
+
+
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Want to listen to the suggested song?")
+                .setMessage("Are you sure you want to listen to "+ music)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.i("Music is", "go");
+
+
+                        startActivity(intent);
+                        //overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.i("Music is", "no");
+
+
+
+                    }
+                })
+                .show();
 
 
 
     }
 
-
-
-        public void redirect ( View view ) {
-
-            int p1,p2;
-            p1=happy.getProgress();
-            p2=energy.getProgress();
-
-
-
-
-
-            if ( ( p1<=4)&&  (p2>4)){
-
-                Log.i ( "Guided Meditation", "badia");
-
-                Intent intent1 = new Intent(seekbarActivity.this, guidedMusic.class);
-                startActivity(intent1);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
-
-                // sad and energy
-            }
-            else if ( ( p1<=4)&&  (p2<=4)){
-
-                Intent intent2 = new Intent(seekbarActivity.this, podcast.class);
-                startActivity(intent2);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
-
-
-                // sad and low energy
-            }
-
-            else if ( ( p1>4)&&  (p2<=4)){
-
-
-                Intent intent3 = new Intent(seekbarActivity.this, binMusic.class);
-                startActivity(intent3);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
-
-                // happy and low energy
-            }
-            else { //happy and high energy
-
-
-                Intent intent4 = new Intent(seekbarActivity.this, generalMusic.class);
-                startActivity(intent4);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
-            }
-
-
-
-
-
-
-
-
-
-        }
-
-
-
-        public void reject  ( View view ){
-
-        layout.setVisibility(View.INVISIBLE);
-        happy.setProgress(0);
-        energy.setProgress(0);
-
-
-
-
-
-        }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,9 +128,9 @@ public class seekbarActivity extends AppCompatActivity {
 
         energy= (SeekBar) findViewById(R.id.energy);
 
-        layout = (LinearLayout) findViewById(R.id.layout);
+        //layout = (LinearLayout) findViewById(R.id.layout);
 
-        text= (TextView) findViewById(R.id.textView5);
+       // text= (TextView) findViewById(R.id.textView5);
 
 
         BottomNavigationView bottomNav= findViewById(R.id.bottom_nav);
