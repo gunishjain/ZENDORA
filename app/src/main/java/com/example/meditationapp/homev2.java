@@ -110,6 +110,14 @@ public class homev2 extends AppCompatActivity {
 
                     break;
 
+                case R.id.nav_seekbar:
+
+                    Intent intent3 = new Intent(homev2.this, seekbarActivity.class);
+                    startActivity(intent3);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+                    break;
+
 
             }
 

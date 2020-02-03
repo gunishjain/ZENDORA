@@ -101,6 +101,13 @@ public class musicLibrary extends AppCompatActivity {
                     break;
 
 
+                case R.id.nav_seekbar:
+                    Intent intent3 = new Intent(musicLibrary.this, seekbarActivity.class);
+                    startActivity(intent3);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    break;
+
+
                 case R.id.nav_music:
 
 
